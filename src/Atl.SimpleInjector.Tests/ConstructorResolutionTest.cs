@@ -1,8 +1,7 @@
 ﻿using System;
-using Atl.SimpleInjector.MultiConstructorResolver;
 using Xunit;
 
-namespace AtlSimpleInjectorMultiConstructorResolver.Test
+namespace Atl.SimpleInjector.Tests
 {
     public class ConstructorResolutionTest : IClassFixture<MultiConstructorResolutionBehavior>
     {
