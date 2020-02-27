@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/Activehigh/Atl.SimpleInjector.MultiConstructorResolver</RepositoryUrl>
     <PackageTags>SimpleInjector Constructor Resolver</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Atl.SimpleInjector.MultiConstructorResolver</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
