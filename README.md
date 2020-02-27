@@ -3,7 +3,7 @@ A constructor resolver needed to bypass Simple Injector exception for multiple c
 
 Install the package  -
 
-    Install-Package Atl.SimpleInjector.MultiConstructorResolver -Version 1.0.6353.29539
+    Install-Package Atl.SimpleInjector.MultiConstructorResolver 
 
 and override the constructor resolver - 
 
