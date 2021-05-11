@@ -63,28 +63,32 @@ namespace Atl.SimpleInjector.Tests
         [Fact]
         public void ResolveNoConstructor()
         {
-            var result = _constructorResolutionBehavior.GetConstructor(typeof(A));
+            var result = _constructorResolutionBehavior.TryGetConstructor(typeof(A), out var error);
+            Assert.Empty(error);
             Assert.NotNull(result);
         }
         
         [Fact]
         public void ResolveOneConstructor()
         {
-            var result = _constructorResolutionBehavior.GetConstructor(typeof(B));
+            var result = _constructorResolutionBehavior.TryGetConstructor(typeof(B), out var error);
+            Assert.Empty(error);
             Assert.NotNull(result);
         }
 
         [Fact]
-        public void ResolveMulitpleConstructorWithUnEqualParamters()
+        public void ResolveMultipleConstructorWithUnEqualParameters()
         {
-            var result = _constructorResolutionBehavior.GetConstructor(typeof(C));
+            var result = _constructorResolutionBehavior.TryGetConstructor(typeof(C), out var error);
+            Assert.Empty(error);
             Assert.NotNull(result);
         }
 
         [Fact]
-        public void ResolveMulitpleConstructorWithEqualParamters()
+        public void ResolveMultipleConstructorWithEqualParameters()
         {
-            Assert.Throws<Exception>(() => _constructorResolutionBehavior.GetConstructor(typeof(D)));
+	        _constructorResolutionBehavior.TryGetConstructor(typeof(D), out var error);
+            Assert.Equal($"Type {typeof(D)} has multiple constructors defined with same number of parameters.", error);
         }
     }
 }
